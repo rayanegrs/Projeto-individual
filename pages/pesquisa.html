@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMULE AQUI </title>
+    <link rel="icon" href="img/logo.jpg">
+    <link rel="stylesheet" href="css/pesquisa.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <!-- <div class="botoes">
+            <a href="login.html">LOGIN</a> -->
+
+        <!-- <a href="cadastro.html">CADASTRAR</a> -->
+        <!-- </div> -->
+        <nav>
+            <!-- <div class="inicio-cabeçalho"> -->
+
+            <!-- CRIANDO A NAVBAR -->
+            <a href="index.html">HOME</a>
+                    <a href="../public/make.html">MAKE</a>
+                    <a href="skincare.html">SKINCARE</a>
+                    <a href="pesquisa.html">SIMULE AQUI</a>
+                    <!-- <a href="estilo.html">DASHBOARD</a> -->
+            
+
+
+
+            <!-- CRIANDO OS BOTÕES -->
+
+            <!-- </div> -->
+        </nav>
+
+        <div class="botoes">
+            <a href="login.html">ENTRAR</a>
+
+            <a href="cadastro.html">CADASTRAR</a>
+        </div>
+
+    </header>
+
+    <main class="programa">
+        <div class="programa1">
+            <h2>Será que sua pele está recebendo todos os cuidados necessários ? </h2>
+
+            <p> Use o simulador para saber como melhorar seus cuidados </p>
+        
+            <div class="inputs">
+                <input type="number" placeholder="frequencia da make" id="freq_make"><BR><BR>
+                    <input type="number" placeholder="frequencia do skin care" id="freq_skin"><BR><BR>
+            <button onclick="calcular()">dicas</button> <br>
+            <div id="div_make"></div><br>
+            <div id="div_cuidados"></div><br> 
+        </div>
+              
+        <div id="exibir"></div>
+        <div id="exibir_skin"></div>
+
+    </main>
+    <footer class="rodape">
+        <!-- <h3 class="title">Redes sociais</h3> -->
+
+        <!-- target_blank é utilizado para abrir em outra aba -->
+        <a href="https://www.instagram.com/ray.grs/" title="Instagram" target="_blank">
+            <!-- tamanho ideal da img w=32 e h=32 -->
+            <img src="" alt="Instagram">
+        </a>
+
+        <a href="https://github.com/rayanegrs/Projeto-individual.git" title="GITHUB" target="_blank">
+            <img src="" alt="Git hub">
+        </a>
+
+        <!-- <a href="https://photos.app.goo.gl/skbfksZEgZH7f1JW6" title="Dicas de maquiagem para iniciantes"
+            target="_blank">
+            <img src="" alt="Album maquiagem">
+        </a>
+        <a href="https://photos.app.goo.gl/aLB3Gq318oQ2QwQu5" title="Dicas de looks para iniciantes" width="80px"
+            height="100px" target="_blank">
+            <img src="" alt="looks">
+        </a>
+
+        </div> -->
+
+
+
+    </footer>
+
+
+    <script>
+
+        // ideias depois de fazer as validações exibir uma porcentagem entre as duas extremidades que estarão sendo expostas no banco de dados e na dashboard
+    
+        // AO CLICAR NO BOTÃO DE DICAS APARECER O DA PORCENTAGEM
+    
+    
+        function calcular() {
+    
+            var make = Number(freq_make.value);
+            var skin = Number(freq_skin.value);
+            
+                
+            // porcentagem da maquiagem
+                var MakePorcentagem = Number(make / 7) * 100; 
+               
+                // porcentagem do skin care
+                var SkinPorcentagem= Number(skin / 7) * 100; 
+    
+            // MAKE 
+            
+            if(make == " " && skin ==" "){
+                
+                alert("Preencha os campos vazios com a sua frequência de uso semanal")
+            }
+    
+            if (make > 0 && make <= 7 && skin > 0 && skin <= 7) {
+    
+                if (make <= 3) {
+                    exibir.innerHTML =`A porcentagem semanal da maquiagem corresponde á ${MakePorcentagem}% `
+                    alert("Em relação ao uso da maquiagem Sua pele está aparentemente saudável, entre em nosso blog e aperfeiçoa ainda mais com nossas dicas de skin care")
+                }
+                else {
+                    exibir.innerHTML =`A porcentagem semanal da maquiagem  corresponde á ${MakePorcentagem}% `
+                    alert("A sua frequência de maquiagem por semana está elevada, cuidado pois o uso da maquiagem em excesso pode ser prejudicial para sua pele, para diminuir os impactos, você pode seguir uma rotina de skin care, recomendo que dê uma olhada em nosso blog ")
+                }
+    
+                // SKIN CARE 
+    
+                if (skin < 2) {
+
+                    exibir_skin.innerHTML =`A porcentagem semanal do skin care corresponde á ${SkinPorcentagem}% `
+                    alert("Seu nivel de cuidado está fora do padrão esperado, recomendo que entre em nosso blog e veja alguns cuidados básicos que te ajudará a melhorar sua pele, sem muito esforço" )
+                }
+                else {
+                    exibir_skin.innerHTML =`A porcentagem semanal do skin care corresponde á ${SkinPorcentagem}% `
+                    alert("Seu nível de cuidados está dentro do padrão esperado, continue assim, para aperfeiçoar ainda mais olhe algumas dicas de produtos de acordo com a sua pele ")
+                }
+            }
+            else {
+                alert("DIGITE A FREQUÊNCIA SEMANAL OBS: O VALOR DEVE ESTAR ENTRE 0 E 7")
+            }
+
+        
+
+        }
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    </script>

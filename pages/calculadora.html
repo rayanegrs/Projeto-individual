@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simule Aqui</title>
+</head>
+
+<body>
+    <h2>Será que sua pele está recebendo todos os cuidados necessários ? </h2>
+
+    <p> Use o simulador para saber como melhorar seus cuidados </p>
+
+    <label for="freq_make">Qual a frequencia semanal em que você fez o uso da maquiagem:</label>
+    <input type="number" id="freq_make" /><br />
+    <label for="freq_skin">Qual a frequencia semanal em que você faz skin care </label>
+    <input type="number" id="freq_skin" /><br />
+    <button onclick="calcular()">dicas</button> <br>
+    <div id="div_make"></div><br>
+    <div id="div_cuidados"></div><br>
+
+
+
+
+</body>
+
+</html>
+<script>
+
+    // ideias depois de fazer as validações exibir uma porcentagem entre as duas extremidades que estarão sendo expostas no banco de dados e na dashboard
+
+    // AO CLICAR NO BOTÃO DE DICAS APARECER O DA PORCENTAGEM
+
+
+    function calcular() {
+
+        var make = Number(freq_make.value);
+        var skin = Number(freq_skin.value);
+
+        // MAKE 
+
+
+        if (make >= 0 && make <= 7 && skin >= 0 && skin <= 7) {
+
+            if (make <= 3) {
+                div_make.innerHTML = `Em relação ao uso da maquiagem Sua pele está aparentemente saudavel, entre em nosso blog e aperfeiçoa ainda mais com nossas dicas de skin care`
+            }
+            else {
+                div_make.innerHTML = `A sua frequência de maquiagem por semana está elevada, cuidado pois o uso da maquiagem em excesso pode ser prejudicioal para sua pele, para diminuir os impactos, você pode seguir uma rotina de skin care, recomendo que dê uma olhada em nosso blog `
+            }
+
+            // SKIN CARE 
+
+            if (skin < 2) {
+                div_cuidados.innerHTML = `Seu nivel de cuidado, está fora do padrão esperado, recomendo que entre em nosso blog e veja alguns cuidados básicos que te ajudará a melhorar sua pele, sem muito esforço `
+            }
+            else {
+                div_cuidados.innerHTML = `Seu nível de cuidados está dentro do padrão esperado, continue assim, para aperfeiçoar ainda mais olhe algumas dicas de produtos de acordo com a sua pele `
+            }
+        }
+        else {
+            alert("Para prosseguir é necessário que o numero esteje entre 0 e 7,verifique os campos e tente novamente")
+        }
+    }
+
+
+    
+
+
+
+
+
+
+</script>

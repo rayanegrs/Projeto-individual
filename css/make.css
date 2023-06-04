@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: #000000;
+    overflow-x: hidden;
+    color: aliceblue;
+    /* background-image: url(Design\ sem\ nome\ \(1\).png); */
+    
+
+}
+@font-face {
+    font-family: MinhaFonte;
+    src: url(LearningCurve.ttf);
+}
+
+header {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2%;
+    margin: 1%;
+    
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    /* position: relative; */
+}
+
+
+.botoes {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+    justify-content: flex-end;
+    
+}
+
+.botoes a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.seu_tom{
+    padding: 0;
+    margin: 1.5;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center ; */
+    height: 60%;
+    width: 100%;
+    
+}
+.seu_tom img{
+    border-radius: 15px;
+}
+
+.frase{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    padding: 1%;
+    font-family: MinhaFonte;
+    font-size: 60px;
+}
+.seu_tom img:hover{
+    transform: scale(1.1);
+    transition: all ease-in-out 0.5s;
+}
+.make img{
+    width: 100%;
+    border-radius: 15px;
+}
+.make p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    padding: 2%;
+    font-family: MinhaFonte;
+    font-size: 60px;
+}
+.inspiracao {
+    margin: 1%;
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.inspiracao img:hover{
+    transform: scale(1.1);
+    transition: all ease-in-out 0.5s;
+}
+
+.rodape{
+    padding: 50px ;
+    height: 50px;
+    width: 100%;
+    background-color: #1a1a1a;
+    border-top: 4px beige;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+.lista img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border: none;
+    padding: 15px;
+    width:10%;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    padding: 0.5%;
+}
+button:hover{
+    background-color: rgb(170, 175, 175);
+}
+
+.interacao h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.interacao button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ver{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    padding: 1%;
+}

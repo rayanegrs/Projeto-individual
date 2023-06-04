@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+@font-face {
+    font-family: MinhaFonte;
+    src: url(LearningCurve.ttf);
+}
+
+body {
+    background-color: #000000;
+    overflow-x: hidden;
+    color: rgb(255, 255, 255);
+
+
+}
+
+header {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2%;
+    margin: 1%;
+
+}
+
+.banner-img {
+    width: 100%;
+}
+
+.destaque-titulo {
+
+    display: flex;
+    padding: 0%;
+    margin: 1%;
+    color: #ffffff;
+    justify-content: center;
+}
+
+.imgInicial {
+
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2%;
+
+}
+
+.skincare-home {
+    width: 350px;
+    height: 420px;
+    border-radius: 6px;
+}
+
+.make-home {
+    width: 350px;
+    height: 420px;
+    border-radius: 6px;
+}
+
+.estilo-home {
+    width: 350px;
+    height: 420px;
+    border-radius: 6px;
+}
+
+/* ATRIBUIDO ZOOM NAS IMAGENS */
+.skincare-home:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out 0.3s;
+}
+
+.make-home:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out 0.3s;
+}
+
+.estilo-home:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out 0.3s;
+}
+
+
+
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+
+}
+
+
+.botoes {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+    justify-content: flex-end;
+
+}
+
+.botoes a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.Seja-o-que-te-inspira {
+    font-family: MinhaFonte;
+    font-size: 70px;
+}
+
+section {
+    padding: 1rem;
+}
+.conteudo{
+    display: flex;
+    font-size: 70px;
+    align-items: center;
+    justify-content: center;
+    font-family: MinhaFonte;
+
+}
+video{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+   
+    
+}
+
+.imgInicial h4 {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    margin: 2%;
+
+
+}
+
+.imgInicial a {
+
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.rodape {
+    padding: 50px;
+    height: 50px;
+    width: 100%;
+    background-color: #1a1a1a;
+    border-top: 4px beige;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.rodape a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.rodape a :hover {
+    color: rgb(158, 131, 163);
+    transition: 0.25s ease;
+}

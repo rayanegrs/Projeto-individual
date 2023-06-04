@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAQUIAGEM</title>
+    <link rel="icon" href="img/logo.jpg">
+    <link rel="stylesheet" href="css/make.css">
+</head>
+
+<body>
+    <header>
+
+        <!-- <div class="botoes">
+            <a href="login.html">LOGIN</a> -->
+
+        <!-- <a href="cadastro.html">CADASTRAR</a> -->
+        <!-- </div> -->
+        <nav>
+            <!-- <div class="inicio-cabeçalho"> -->
+
+            <!-- CRIANDO A NAVBAR -->
+            <a href="index.html">HOME</a>
+            <a href="../public/make.html">MAKE</a>
+            <a href="skincare.html">SKINCARE</a>
+            <a href="pesquisa.html">SIMULE AQUI</a>
+
+
+
+
+            <!-- CRIANDO OS BOTÕES -->
+
+            <!-- </div> -->
+        </nav>
+
+        <div class="botoes">
+            <a href="login.html">ENTRAR</a>
+
+            <a href="cadastro.html">CADASTRAR</a>
+        </div>
+
+    </header>
+    <section>
+        <main>
+
+            <div class="frase">
+                <p> Não erre mais o tom da base</p>
+
+            </div>
+
+            <div class="seu_tom">
+
+                <a href="" title="Sugestões de maquiagem de acordo com seu tom" target="_blank">
+                    <img class="claro" src="img/tom de base/claro.png"></a>
+
+                <a href="" title="Sugestões de maquiagem de acordo com seu tom" target="_blank">
+                    <img class="medioClaro" src="img/tom de base/medioClaro.png"></a>
+
+                <a href="" title="Sugestões de maquiagem de acordo com seu tom" target="_blank">
+                    <img class="Medio" src="img/tom de base/medio.png"></a>
+
+                <a href="" title="Sugestões de maquiagem de acordo com seu tom" target="_blank">
+                    <img class="Medioescuro" src="img/tom de base/medioescuro.png"></a>
+
+                <a href="https://photos.app.goo.gl/skbfksZEgZH7f1JW6"
+                    title="Sugestões de maquiagem de acordo com seu tom" target="_blank">
+                    <img class="escuro" src="img/tom de base/escuro.png"></a>
+
+
+            </div>
+
+    </section>
+    <section>
+
+
+
+        <div class="make">
+
+            <p> Passo a passo para iniciantes </p>
+            <img src="img/kit (1).png" alt="">
+
+            <!-- <div class="kit">
+
+                <p>KIT MÍNIMO E PRÁTICO</h2>
+            </div> -->
+
+            <div class="lista">
+                <img src="img/recursos basicos make.jpg" alt=""><br><br>
+
+
+            </div>
+
+
+    </section>
+
+    <section>
+        <div class="interacao">
+
+            <h1>Inspirações de maquiagem</h1> <br>
+            <div class="botao">
+                <button onclick="exibir()"> ver inspirações</button><br>
+            </div>
+
+        </div>
+
+        <div class="ver">
+            <div id="mostrar"></div>
+        </div>
+
+    </section>
+
+    <footer class="rodape">
+        <!-- <h3 class="title">Redes sociais</h3> -->
+
+        <!-- target_blank é utilizado para abrir em outra aba -->
+        <a href="https://www.instagram.com/ray.grs/" title="Instagram" target="_blank">
+            <!-- tamanho ideal da img w=32 e h=32 -->
+            <img src="" alt="Instagram">
+        </a>
+
+        <a href="https://github.com/rayanegrs/Projeto-individual.git" title="GITHUB" target="_blank">
+            <img src="" alt="Git hub">
+        </a>
+
+        <!-- <a href="https://photos.app.goo.gl/skbfksZEgZH7f1JW6" title="Dicas de maquiagem para iniciantes"
+            target="_blank">
+            <img src="" alt="Album maquiagem">
+        </a>
+        <a href="https://photos.app.goo.gl/aLB3Gq318oQ2QwQu5" title="Dicas de looks para iniciantes" width="80px"
+            height="100px" target="_blank">
+            <img src="" alt="looks">
+        </a>
+
+        </div> -->
+
+
+
+    </footer>
+
+
+    </section>
+
+
+
+    </main>
+</body>
+
+</html>
+<script>
+
+    lista_inspiracao = [
+        'https://i.pinimg.com/736x/d0/ca/0d/d0ca0db13ccf98e5833dd67c7a68d39a.jpg',
+
+        'https://i.pinimg.com/736x/13/37/1a/13371a24812b29e4513683146d0a9a80.jpg',
+
+        'https://i.pinimg.com/736x/d0/ca/0d/d0ca0db13ccf98e5833dd67c7a68d39a.jpg',
+
+        'https://www.maybelline.com.br/~/media/mny/br/artigos/2023/dicas-de-maquiagem-para-fim-de-ano/dicas-de-maquiagem-para-fim-de-ano.jpg',
+
+        'https://julianarakoza.com/wp-content/uploads/2021/10/maquiagem-simples-com-esfumado-leve-735x1024.jpg'
+    ]
+
+    function exibir() {
+
+
+        var posicao = parseInt(Math.random() * lista_inspiracao.length)
+
+        if (lista_inspiracao.length > 0) {
+            mostrar.innerHTML = `<br><br><img src="${lista_inspiracao[posicao]}" width="300px">`
+        }
+
+
+    }
+
+
+
+
+</script>

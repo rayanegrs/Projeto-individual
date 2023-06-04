@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    
+    background-color: black;
+    color: aliceblue;
+    overflow: hidden;
+    background-image: url(background.png);
+}
+header {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2%;
+    margin: 1%;
+}
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    /* position: relative; */
+}
+
+
+.botoes {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+    justify-content: flex-end;
+
+}
+.botoes a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 10px;
+    
+    
+}
+.programa1{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    margin: 2%;
+
+    
+}
+.programa h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.programa p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+
+}
+
+
+button {
+    padding: .6rem;
+    font-size: .9rem;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+.botoes:hover {
+    color: rgb(0, 0, 0);
+    transition: 0.25s ease;
+}
+
+.rodape {
+    padding: 50px;
+    height: 50px;
+    width: 100%;
+    background-color: #1a1a1a;
+    border-top: 4px beige;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.rodape a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.rodape a :hover {
+    color: rgb(158, 131, 163);
+    transition: 0.25s ease;
+}

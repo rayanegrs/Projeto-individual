@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: #000000;
+    overflow-x: hidden;
+    color: aliceblue;
+    /* background-image: url(background.png); */
+    
+
+}
+
+header {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2%;
+    margin: 1%;
+    
+}
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    /* position: relative; */
+}
+
+
+.botoes {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+    justify-content: flex-end;
+    
+}
+.botoes a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.textoInicial{
+    padding: 1%;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resposta1{
+    padding: 1%;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.skincare img{
+    width: 100%;
+}
+.skincare h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    padding: 2%;
+}
+.conceito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    padding: 2%;
+    font-size: 20px;
+}
+.interacao h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    padding: 0.5%;
+}
+button{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border: none;
+    padding: 15px;
+    width:10%;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+button:hover{
+    background-color: rgb(170, 175, 175);
+}
+.interacao button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ver{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    padding: 1%;
+    font-size: 18px;
+}
+.rodape {
+    padding: 50px;
+    height: 50px;
+    width: 100%;
+    background-color: #1a1a1a;
+    border-top: 4px beige;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.rodape a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.rodape a :hover {
+    color: rgb(158, 131, 163);
+    transition: 0.25s ease;
+}
