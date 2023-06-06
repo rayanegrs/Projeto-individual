@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAQUIAGEM</title>
     <link rel="icon" href="img/logo.jpg">
-    <link rel="stylesheet" href="css/make.css">
+    <link rel="stylesheet" href="../css/make.css">
 </head>
 
 <body>
@@ -23,10 +23,11 @@
 
             <!-- CRIANDO A NAVBAR -->
             <a href="index.html">HOME</a>
-            <a href="../public/make.html">MAKE</a>
-            <a href="skincare.html">SKINCARE</a>
-            <a href="pesquisa.html">SIMULE AQUI</a>
-
+                    <a href="../pages/make.html">MAKE</a>
+                    <a href="../pages/skincare.html">SKINCARE</a>
+                    <a href="../pages/pesquisa.html">SIMULE AQUI</a>
+                    <!-- <a href="estilo.html">DASHBOARD</a> -->
+            
 
 
 
@@ -36,9 +37,9 @@
         </nav>
 
         <div class="botoes">
-            <a href="login.html">ENTRAR</a>
+            <a href="../pages/login.html">ENTRAR</a>
 
-            <a href="cadastro.html">CADASTRAR</a>
+            <a href="../pages/cadastro.html">CADASTRAR</a>
         </div>
 
     </header>
@@ -52,21 +53,21 @@
 
             <div class="seu_tom">
 
-                <a href="" title="Sugestões de maquiagem de acordo com seu tom" target="_blank">
-                    <img class="claro" src="img/tom de base/claro.png"></a>
+                <a href="" title="Tom Claro" target="_blank">
+                    <img class="claro" src="../assets/tom de base/claro.png"></a>
 
-                <a href="" title="Sugestões de maquiagem de acordo com seu tom" target="_blank">
-                    <img class="medioClaro" src="img/tom de base/medioClaro.png"></a>
+                <a href="" title="Tom médio claro" target="_blank">
+                    <img class="medioClaro" src="../assets/tom de base/medioClaro.png"></a>
 
-                <a href="" title="Sugestões de maquiagem de acordo com seu tom" target="_blank">
-                    <img class="Medio" src="img/tom de base/medio.png"></a>
+                <a href="" title="Tom médio" target="_blank">
+                    <img class="Medio" src="../assets/tom de base/medio.png"></a>
 
-                <a href="" title="Sugestões de maquiagem de acordo com seu tom" target="_blank">
-                    <img class="Medioescuro" src="img/tom de base/medioescuro.png"></a>
+                <a href="" title="Tom médio escuro" target="_blank">
+                    <img class="Medioescuro" src="../assets/tom de base/medioescuro.png"></a>
 
                 <a href="https://photos.app.goo.gl/skbfksZEgZH7f1JW6"
-                    title="Sugestões de maquiagem de acordo com seu tom" target="_blank">
-                    <img class="escuro" src="img/tom de base/escuro.png"></a>
+                    title="tom escuro" target="_blank">
+                    <img class="escuro" src="../assets/tom de base/escuro.png"></a>
 
 
             </div>
@@ -79,7 +80,7 @@
         <div class="make">
 
             <p> Passo a passo para iniciantes </p>
-            <img src="img/kit (1).png" alt="">
+            <img src="../assets/img/kit (1).png" alt="">
 
             <!-- <div class="kit">
 
@@ -87,7 +88,7 @@
             </div> -->
 
             <div class="lista">
-                <img src="img/recursos basicos make.jpg" alt=""><br><br>
+                <img src="../assets/img/recursos basicos make.jpg" alt=""><br><br>
 
 
             </div>
@@ -168,7 +169,7 @@
         var posicao = parseInt(Math.random() * lista_inspiracao.length)
 
         if (lista_inspiracao.length > 0) {
-            mostrar.innerHTML = `<br><br><img src="${lista_inspiracao[posicao]}" width="300px">`
+            mostrar.innerHTML = `<br><br><img src="${lista_inspiracao[posicao]}" width="400px">`
         }
 
 

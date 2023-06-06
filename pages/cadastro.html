@@ -7,58 +7,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastre - se </title>
     <link rel="icon" href="img/logo.jpg">
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
 
 </head>
 
 <body>
 
-        <header>
+    <header>
 
-            <!-- <div class="botoes">
-                <a href="login.html">LOGIN</a> -->
-    
-                <!-- <a href="cadastro.html">CADASTRAR</a> -->
-            <!-- </div> -->
-            <nav>
-                <!-- <div class="inicio-cabeçalho"> -->
-    
-                <!-- CRIANDO A NAVBAR -->
-                <a href="index.html">HOME</a>
-                    <a href="../public/make.html">MAKE</a>
-                    <a href="skincare.html">SKINCARE</a>
-                    <a href="pesquisa.html">SIMULE AQUI</a>
+        <!-- <div class="botoes">
+            <a href="login.html">LOGIN</a> -->
+
+        <!-- <a href="cadastro.html">CADASTRAR</a> -->
+        <!-- </div> -->
+        <nav>
+            <!-- <div class="inicio-cabeçalho"> -->
+
+            <!-- CRIANDO A NAVBAR -->
+            <a href="index.html">HOME</a>
+                    <a href="../pages/make.html">MAKE</a>
+                    <a href="../pages/skincare.html">SKINCARE</a>
+                    <a href="../pages/pesquisa.html">SIMULE AQUI</a>
+                    <!-- <a href="estilo.html">DASHBOARD</a> -->
             
-    
-                <!-- CRIANDO OS BOTÕES -->
-    
-                <!-- </div> -->
-            </nav>
-    
-            <div class="botoes">
-                <a href="login.html">ENTRAR</a>
-    
-                <a href="cadastro.html">CADASTRAR</a>
-            </div>
-    
-        </header>
 
-        <main class="cadastro">
-            <div class="conteiner">
 
-                <h1>Cadastro</h1><BR><BR>
-                <input type="text" placeholder="Nome" id="nome_input"><BR><BR>
-                <input type="text" placeholder="Sobrenome" id="sobrenome_input"><BR><BR>
-                <input type="text" placeholder="email" id="email_input"><BR><BR>
-                <input type="password" placeholder="senha" id="senha_input"><BR><BR>
-                <button onclick="cadastrar()"> ENVIAR </button><br><br><BR><BR>
 
-                
+            <!-- CRIANDO OS BOTÕES -->
 
-            </div>
+            <!-- </div> -->
+        </nav>
 
-        </main>
-    
+        <div class="botoes">
+            <a href="../pages/login.html">ENTRAR</a>
+
+            <a href="../pages/cadastro.html">CADASTRAR</a>
+        </div>
+
+    </header>
+
+    <main class="cadastro">
+        <div class="conteiner">
+
+            <h1>Cadastro</h1><BR><BR>
+            <input type="text" placeholder="Nome" id="nome_input"><BR><BR>
+            <input type="text" placeholder="Sobrenome" id="sobrenome_input"><BR><BR>
+            <input type="text" placeholder="email" id="email_input"><BR><BR>
+            <input type="password" placeholder="senha" id="senha_input"><BR><BR>
+            <button onclick="cadastrar()"> ENVIAR </button><br><br><BR><BR>
+
+
+
+        </div>
+
+    </main>
+
 
     <!-- <footer class="rodape"> -->
     <!-- <h3 class="title">Redes sociais</h3> -->
@@ -87,7 +90,7 @@
     <!-- </footer> -->
 
 
-    </html>
+</html>
 
 </body>
 
@@ -95,7 +98,7 @@
 
 <script>
 
-function cadastrar() {
+    function cadastrar() {
         // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
