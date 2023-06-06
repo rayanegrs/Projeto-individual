@@ -71,6 +71,15 @@ nav a {
 .skincare img{
     width: 100%;
 }
+.planejamento img{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 2%;
+    padding: 2%;
+    width: 90%;
+}
+
 .skincare h2{
     display: flex;
     justify-content: center;
@@ -129,6 +138,11 @@ button:hover{
     padding: 1%;
     font-size: 18px;
 }
+    /* .mostrar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
 .rodape {
     padding: 50px;
     height: 50px;

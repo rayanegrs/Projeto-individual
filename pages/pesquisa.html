@@ -25,11 +25,11 @@
 
             <!-- CRIANDO A NAVBAR -->
             <a href="index.html">HOME</a>
-                    <a href="../pages/make.html">MAKE</a>
-                    <a href="../pages/skincare.html">SKINCARE</a>
-                    <a href="../pages/pesquisa.html">SIMULE AQUI</a>
-                    <!-- <a href="estilo.html">DASHBOARD</a> -->
-            
+            <a href="../pages/make.html">MAKE</a>
+            <a href="../pages/skincare.html">SKINCARE</a>
+            <a href="../pages/pesquisa.html">SIMULE AQUI</a>
+            <!-- <a href="estilo.html">DASHBOARD</a> -->
+
 
 
 
@@ -51,17 +51,17 @@
             <h2>Será que sua pele está recebendo todos os cuidados necessários ? </h2>
 
             <p> Use o simulador para saber como melhorar seus cuidados </p>
-        
+
             <div class="inputs">
                 <input type="number" placeholder="frequencia da make" id="freq_make"><BR><BR>
-                    <input type="number" placeholder="frequencia do skin care" id="freq_skin"><BR><BR>
-            <button onclick="calcular()">dicas</button> <br>
-            <div id="div_make"></div><br>
-            <div id="div_cuidados"></div><br> 
-        </div>
-              
-        <div id="exibir"></div>
-        <div id="exibir_skin"></div>
+                <input type="number" placeholder="frequencia do skin care" id="freq_skin"><BR><BR>
+                <button onclick="calcular()">dicas</button> <br>
+                <div id="div_make"></div><br>
+                <div id="div_cuidados"></div><br>
+            </div>
+
+            <div id="exibir"></div>
+            <div id="exibir_skin"></div>
 
     </main>
     <footer class="rodape">
@@ -96,49 +96,49 @@
     <script>
 
         // ideias depois de fazer as validações exibir uma porcentagem entre as duas extremidades que estarão sendo expostas no banco de dados e na dashboard
-    
+
         // AO CLICAR NO BOTÃO DE DICAS APARECER O DA PORCENTAGEM
-    
-    
+
+
         function calcular() {
-    
+
             var make = Number(freq_make.value);
             var skin = Number(freq_skin.value);
-            
-                
+
+
             // porcentagem da maquiagem
-                var MakePorcentagem = Number(make / 7) * 100; 
-               
-                // porcentagem do skin care
-                var SkinPorcentagem= Number(skin / 7) * 100; 
-    
+            var MakePorcentagem = Number(make / 7) * 100;
+
+            // porcentagem do skin care
+            var SkinPorcentagem = Number(skin / 7) * 100;
+
             // MAKE 
-            
-            if(make == " " && skin ==" "){
-                
+
+            if (make == " " && skin == " ") {
+
                 alert("Preencha os campos vazios com a sua frequência de uso semanal")
             }
-    
+
             if (make > 0 && make <= 7 && skin > 0 && skin <= 7) {
-    
+
                 if (make <= 3) {
-                    exibir.innerHTML =`A porcentagem semanal da maquiagem corresponde á ${MakePorcentagem}% `
+                    exibir.innerHTML = `A porcentagem semanal da maquiagem corresponde á ${MakePorcentagem}% `
                     alert("Em relação ao uso da maquiagem Sua pele está aparentemente saudável, entre em nosso blog e aperfeiçoa ainda mais com nossas dicas de skin care")
                 }
                 else {
-                    exibir.innerHTML =`A porcentagem semanal da maquiagem  corresponde á ${MakePorcentagem}% `
+                    exibir.innerHTML = `A porcentagem semanal da maquiagem  corresponde á ${MakePorcentagem}% `
                     alert("A sua frequência de maquiagem por semana está elevada, cuidado pois o uso da maquiagem em excesso pode ser prejudicial para sua pele, para diminuir os impactos, você pode seguir uma rotina de skin care, recomendo que dê uma olhada em nosso blog ")
                 }
-    
+
                 // SKIN CARE 
-    
+
                 if (skin < 2) {
 
-                    exibir_skin.innerHTML =`A porcentagem semanal do skin care corresponde á ${SkinPorcentagem}% `
-                    alert("Seu nivel de cuidado está fora do padrão esperado, recomendo que entre em nosso blog e veja alguns cuidados básicos que te ajudará a melhorar sua pele, sem muito esforço" )
+                    exibir_skin.innerHTML = `A porcentagem semanal do skin care corresponde á ${SkinPorcentagem}% `
+                    alert("Seu nivel de cuidado está fora do padrão esperado, recomendo que entre em nosso blog e veja alguns cuidados básicos que te ajudará a melhorar sua pele, sem muito esforço")
                 }
                 else {
-                    exibir_skin.innerHTML =`A porcentagem semanal do skin care corresponde á ${SkinPorcentagem}% `
+                    exibir_skin.innerHTML = `A porcentagem semanal do skin care corresponde á ${SkinPorcentagem}% `
                     alert("Seu nível de cuidados está dentro do padrão esperado, continue assim, para aperfeiçoar ainda mais olhe algumas dicas de produtos de acordo com a sua pele ")
                 }
             }
@@ -146,16 +146,66 @@
                 alert("DIGITE A FREQUÊNCIA SEMANAL OBS: O VALOR DEVE ESTAR ENTRE 0 E 7")
             }
 
-        
 
+            // ATRIBUINDO VALIDAÇÕES DE CAMPO
+
+            // if e else 
+
+           
+
+
+
+
+
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    sobrenomeServer: sobrenomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // cardErro.style.display = "block";
+
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, "2000")
+
+                    // limparFormulario();
+                    // finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
+            return false;
         }
-    
-    
-        
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
