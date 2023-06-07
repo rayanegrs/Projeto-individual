@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-brazil">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENTRAR</title>
-    <link rel="icon" href="img/logo.jpg">
+    <link rel="icon" href="../assets/img/coroa.jpeg">
     <link rel="stylesheet" href="../css/login.css">
-    
+
 </head>
+
 <body>
     <header>
 
@@ -21,12 +23,13 @@
             <!-- <div class="inicio-cabeçalho"> -->
 
             <!-- CRIANDO A NAVBAR -->
-            <a href="index.html">HOME</a>
-                    <a href="../pages/make.html">MAKE</a>
-                    <a href="../pages/skincare.html">SKINCARE</a>
-                    <a href="../pages/pesquisa.html">SIMULE AQUI</a>
-                    <!-- <a href="estilo.html">DASHBOARD</a> -->
-            
+            <a href="./index.html">HOME</a>
+            <a href="../pages/make.html">MAKE</a>
+            <a href="../pages/skincare.html">SKINCARE</a>
+            <a href="../pages/inspirações.html">INSPIRAÇÕES</a>
+            <a href="../pages/pesquisa.html">SIMULE AQUI</a>
+            <!-- <a href="estilo.html">DASHBOARD</a> -->
+
 
 
 
@@ -43,46 +46,74 @@
 
     </header>
 
-<main class="login">
-    <div class="conteiner">
+    <main class="login">
+        <div class="conteiner">
 
-        <h1>Login</h1><BR><BR>
-        <input type="text" placeholder="email" id="email_input"><BR><BR>
-        <input type="password" placeholder="senha" id="senha_input"><BR><BR>
-        <button onclick="entrar()"> ENVIAR </button><br><br><BR><BR>
+            <h1>Login</h1><BR><BR>
+            <input type="text" placeholder="email" id="email_input"><BR><BR>
+            <input type="password" placeholder="senha" id="senha_input"><BR><BR>
+            <button onclick="entrar()"> ENVIAR </button><br><br><BR><BR>
 
-        <!-- <a href="cadastro.html" onclick="">Não tem uma conta </a> -->
+            <!-- <a href="cadastro.html" onclick="">Não tem uma conta </a> -->
 
-    </div>
+        </div>
 
-</main>
+    </main>
 </body>
 
 
-    
+
 
 </html>
 
 <script>
 
-function entrar() {
+    function entrar() {
         // aguardar();
+
+        var email = email_input;
+        var senha = senha_input;
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            // finalizarAguardar();
-            return false;
-        }
-        else {
-            // setInterval(sumirMensagem, 5000)
+        var check = false;
+
+        if (emailVar || " " || senhaVar == " ") {
+
+            alert("Preencha todos os campos vazios")
         }
 
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+        // validando email
+
+        if (emailVar == "") {
+            email.className = "error " + email.className
+            email.className = email.className.replaceAll("valid ", " ")
+            check = false;
+
+        } else {
+            email.className = email.className.replaceAll("error ", " ")
+            email.className = "valid " + email.className
+
+            check = true;
+        }
+
+        // validando senha 
+
+        if (senhaVar == "") {
+            senha.className = "error " + senha.className
+            senha.className = senha.className.replaceAll("valid ", " ")
+            check = false;
+
+        } else {
+            senha.className = senha.className.replaceAll("error ", " ")
+            senha.className = "valid " + senha.className
+
+            check = true;
+        }
+
+        // console.log("FORM LOGIN: ", emailVar);
+        // console.log("FORM SENHA: ", senhaVar);
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -99,19 +130,27 @@ function entrar() {
             if (resposta.ok) {
                 console.log(resposta);
 
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Login realizado com sucesso',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
 
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                // resposta.json().then(json => {
+                //     console.log(json);
+                //     console.log(JSON.stringify(json));
 
-                    setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                //     sessionStorage.EMAIL_USUARIO = json.email;
+                //     sessionStorage.NOME_USUARIO = json.nome;
+                //     sessionStorage.ID_USUARIO = json.id;
 
-                });
+                setTimeout(function () {
+                    window.location = "../cadastro.html";
+                }, 1000); // apenas para exibir o loading
+
+                // });
 
             } else {
 
@@ -132,11 +171,11 @@ function entrar() {
 
     function sumirMensagem() {
         cardErro.style.display = "none"
-        
+
     }
 
-   
 
-    
+
+
 
 </script>

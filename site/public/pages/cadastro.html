@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastre - se </title>
-    <link rel="icon" href="img/logo.jpg">
+    <link rel="icon" href="../assets/img/coroa.jpeg">
     <link rel="stylesheet" href="../css/cadastro.css">
 
 </head>
@@ -24,12 +24,14 @@
             <!-- <div class="inicio-cabeçalho"> -->
 
             <!-- CRIANDO A NAVBAR -->
-            <a href="index.html">HOME</a>
-                    <a href="../pages/make.html">MAKE</a>
-                    <a href="../pages/skincare.html">SKINCARE</a>
-                    <a href="../pages/pesquisa.html">SIMULE AQUI</a>
-                    <!-- <a href="estilo.html">DASHBOARD</a> -->
-            
+            <a href="./index.html">HOME</a>
+            <a href="../pages/make.html">MAKE</a>
+            <a href="../pages/skincare.html">SKINCARE</a>
+            <a href="../pages/inspirações.html">INSPIRAÇÕES</a>
+
+            <a href="../pages/pesquisa.html">SIMULE AQUI</a>
+            <!-- <a href="estilo.html">DASHBOARD</a> -->
+
 
 
 
@@ -39,7 +41,7 @@
         </nav>
 
         <div class="botoes">
-            
+
             <a href="../pages/login.html">ENTRAR</a>
 
             <a href="../pages/cadastro.html">CADASTRAR</a>
@@ -104,60 +106,131 @@
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
+
+        var nome = nome_input;
+        var sobrenome = sobrenome_input;
+        var email = email_input;
+        var senha = senha_input;
+
+
         var nomeVar = nome_input.value;
         var sobrenomeVar = sobrenome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        var check = false;
 
-            // finalizarAguardar();
+        if (nomeVar == " " || sobrenomeVar == " " || emailVar || " " || senhaVar == " ") {
+
+            alert("Preencha todos os campos vazios")
+        }
+
+        // validando nome 
+
+        if (nomeVar == "") {
+            nome.className = "error " + nome.className
+            nome.className = nome.className.replaceAll("valid ", " ")
+            check = false;
+
+        } else {
+            nome.className = nome.className.replaceAll("error ", " ")
+            nome.className = "valid " + nome.className
+
+            check = true;
+        }
+
+        // validando sobrenome 
+
+        if (sobrenomeVar == "") {
+            sobrenome.className = "error " + sobrenome.className
+            sobrenome.className = sobrenome.className.replaceAll("valid ", " ")
+            check = false;
+
+        } else {
+            sobrenome.className = sobrenome.className.replaceAll("error ", " ")
+            sobrenome.className = "valid " + sobrenome.className
+
+            check = true;
+        }
+
+        // validando email
+
+        if (emailVar == "") {
+            email.className = "error " + email.className
+            email.className = email.className.replaceAll("valid ", " ")
+            check = false;
+
+        } else {
+            email.className = email.className.replaceAll("error ", " ")
+            email.className = "valid " + email.className
+
+            check = true;
+        }
+
+        // validando senha 
+
+        if (senhaVar == "") {
+            senha.className = "error " + senha.className
+            senha.className = senha.className.replaceAll("valid ", " ")
+            check = false;
+
+        } else {
+            senha.className = senha.className.replaceAll("error ", " ")
+            senha.className = "valid " + senha.className
+
+            check = true;
+        }
+
+
+         // Enviando o valor da nova input
+         fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    sobrenomeServer: sobrenomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+            
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // cardErro.style.display = "block";
+
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Login realizado com sucesso',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+
+
+
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, "2000")
+
+                    // limparFormulario();
+                    // finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao verificar informações, por favor preencha os campos corretamente ");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
             return false;
         }
-        else {
-            // setInterval(sumirMensagem, 5000)
-        }
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                sobrenomeServer: sobrenomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                // cardErro.style.display = "block";
-
-                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
-
-                // limparFormulario();
-                // finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            // finalizarAguardar();
-        });
-
-        return false;
-    }
 
 </script>

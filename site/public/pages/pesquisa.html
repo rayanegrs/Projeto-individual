@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIMULE AQUI </title>
-    <link rel="icon" href="img/logo.jpg">
+    <link rel="icon" href="../assets/img/coroa.jpeg">
     <link rel="stylesheet" href="../css/pesquisa.css">
 
 </head>
@@ -24,9 +24,10 @@
             <!-- <div class="inicio-cabeçalho"> -->
 
             <!-- CRIANDO A NAVBAR -->
-            <a href="index.html">HOME</a>
+            <a href="./index.html">HOME</a>
             <a href="../pages/make.html">MAKE</a>
             <a href="../pages/skincare.html">SKINCARE</a>
+            <a href="../pages/inspirações.html">INSPIRAÇÕES</a>
             <a href="../pages/pesquisa.html">SIMULE AQUI</a>
             <!-- <a href="estilo.html">DASHBOARD</a> -->
 
@@ -122,11 +123,11 @@
             if (make > 0 && make <= 7 && skin > 0 && skin <= 7) {
 
                 if (make <= 3) {
-                    exibir.innerHTML = `A porcentagem semanal da maquiagem corresponde á ${MakePorcentagem}% `
+                    // exibir.innerHTML = `A porcentagem semanal da maquiagem corresponde á ${MakePorcentagem}% `
                     alert("Em relação ao uso da maquiagem Sua pele está aparentemente saudável, entre em nosso blog e aperfeiçoa ainda mais com nossas dicas de skin care")
                 }
                 else {
-                    exibir.innerHTML = `A porcentagem semanal da maquiagem  corresponde á ${MakePorcentagem}% `
+                    // exibir.innerHTML = `A porcentagem semanal da maquiagem  corresponde á ${MakePorcentagem}% `
                     alert("A sua frequência de maquiagem por semana está elevada, cuidado pois o uso da maquiagem em excesso pode ser prejudicial para sua pele, para diminuir os impactos, você pode seguir uma rotina de skin care, recomendo que dê uma olhada em nosso blog ")
                 }
 
@@ -134,28 +135,54 @@
 
                 if (skin < 2) {
 
-                    exibir_skin.innerHTML = `A porcentagem semanal do skin care corresponde á ${SkinPorcentagem}% `
+                    // exibir_skin.innerHTML = `A porcentagem semanal do skin care corresponde á ${SkinPorcentagem}% `
                     alert("Seu nivel de cuidado está fora do padrão esperado, recomendo que entre em nosso blog e veja alguns cuidados básicos que te ajudará a melhorar sua pele, sem muito esforço")
                 }
                 else {
-                    exibir_skin.innerHTML = `A porcentagem semanal do skin care corresponde á ${SkinPorcentagem}% `
+                    // exibir_skin.innerHTML = `A porcentagem semanal do skin care corresponde á ${SkinPorcentagem}% `
                     alert("Seu nível de cuidados está dentro do padrão esperado, continue assim, para aperfeiçoar ainda mais olhe algumas dicas de produtos de acordo com a sua pele ")
                 }
             }
-            else {
-                alert("DIGITE A FREQUÊNCIA SEMANAL OBS: O VALOR DEVE ESTAR ENTRE 0 E 7")
-            }
+            // else {
+            //     alert("DIGITE A FREQUÊNCIA SEMANAL OBS: O VALOR DEVE ESTAR ENTRE 0 E 7")
+            // }
 
 
             // ATRIBUINDO VALIDAÇÕES DE CAMPO
 
             // if e else 
 
-           
+            var freqMake = document.getElementById("freq_make");
+            var freqSkinCare = document.getElementById("freq_skin");
 
+            var freqMakeVar = freq_make.value;
+            var freqSkinCareVar = freq_skin.value;
 
+            var check = false;
 
+            if (freqMakeVar == "") {
+                freqMake.className = "error " + freqMake.className
+                freqMake.className = freqMake.className.replaceAll("valid ", " ")
+                check = false;
 
+            } else {
+                freqMake.className = freqMake.className.replaceAll("error ", " ")
+                freqMake.className = "valid " + freqMake.className
+
+                check = true;
+            }
+
+            if (freqSkinCareVar == "") {
+                freqSkinCare.className = "error " + freqSkinCare.className
+                freqSkinCare.className = freqSkinCare.className.replaceAll("valid ", " ")
+                check = false;
+
+            } else {
+                freqSkinCare.className = freqSkinCare.className.replaceAll("error ", " ")
+                freqSkinCare.className = "valid " + freqSkinCare.className
+
+                check = true;
+            }
 
             // Enviando o valor da nova input
             fetch("/usuarios/cadastrar", {
@@ -166,10 +193,8 @@
                 body: JSON.stringify({
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/usuario.js
-                    nomeServer: nomeVar,
-                    sobrenomeServer: sobrenomeVar,
-                    emailServer: emailVar,
-                    senhaServer: senhaVar
+                    freqMakeServer: freqMakeVar,
+                    freqSkinCareServer: freqSkinCareVar
                 })
             }).then(function (resposta) {
 
@@ -180,6 +205,16 @@
 
                     // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Login realizado com sucesso',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+
+
+
                     setTimeout(() => {
                         window.location = "login.html";
                     }, "2000")
@@ -187,7 +222,7 @@
                     // limparFormulario();
                     // finalizarAguardar();
                 } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                    throw ("Houve um erro ao verificar informações, por favor preencha os campos corretamente ");
                 }
             }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);

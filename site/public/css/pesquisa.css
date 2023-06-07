@@ -7,7 +7,7 @@ body{
     background-color: black;
     color: aliceblue;
     overflow: hidden;
-    background-image: url(background.png);
+    background-image: url(../assets/img/background.png)
 }
 header {
 
@@ -57,6 +57,11 @@ input{
     outline: none;
     font-size: 15px;
     border-radius: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    width: 297px;
+    height: 25px;
+    /* margin-top: 12px; */
     
     
 }
@@ -91,15 +96,29 @@ input{
 
 button {
     padding: .6rem;
-    font-size: .9rem;
-    border-radius: 15px;
     cursor: pointer;
-    width: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 10px;
+    width: 325px;
+    height: 50px;
+    /* margin-top: 12px; */
    
     
+}
+.error{
+
+    border: 2px solid red;
+}
+
+.valid{
+
+    border: 2px solid rgb(0, 255, 0);
 }
 
 .botoes:hover {
